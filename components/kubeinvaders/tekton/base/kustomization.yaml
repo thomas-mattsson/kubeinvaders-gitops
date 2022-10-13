@@ -5,3 +5,4 @@ resources:
 - pipeline.yaml
 - eventlistener.yaml
 - triggertemplate.yaml
+- ibm-cloud-pvc.yaml
