@@ -32,8 +32,8 @@ clusterRole:
 deployment:
   replicaCount: 1
   image:
-    repository: luckysideburn/kubeinvaders
-    tag: v1.9
+    repository: image-registry.openshift-image-registry.svc:5000/kubeinvaders-gitops/kubeinvaders
+    tag: latest
     pullPolicy: Always
   extraEnv: []
   # - name: FOO
