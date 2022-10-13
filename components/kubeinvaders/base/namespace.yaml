@@ -1,6 +1,6 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: vcc-dev
+  name: kubeinvaders-gitops
   labels:
     openshift.io/cluster-monitoring: 'true'
