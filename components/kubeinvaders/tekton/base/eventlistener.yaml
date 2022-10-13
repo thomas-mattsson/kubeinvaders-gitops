@@ -1,0 +1,30 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: event-listener-kubeinvaders
+  finalizers:
+    - eventlisteners.triggers.tekton.dev
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    - bindings:
+        - kind: ClusterTriggerBinding
+          ref: github-push
+      template:
+        ref: trigger-template-build-kubeinvaders
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: event-listener-kubeinvaders
+spec:
+  to:
+    kind: Service
+    name: el-event-listener-kubeinvaders
+    weight: 100
+  port:
+    targetPort: http-listener
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
