@@ -29,3 +29,20 @@ objects:
       syncPolicy:
         automated:
           selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: kubeinvaders-gitops
+      namespace: openshift-gitops
+    spec:
+      destination:
+        namespace: kubeinvaders
+        server: 'https://kubernetes.default.svc'
+      project: default
+      source:
+        path: components/kubeinvaders/base
+        repoURL: 'https://github.com/thomas-mattsson/kubeinvaders-gitops'
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          selfHeal: true
