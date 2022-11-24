@@ -32,7 +32,7 @@ clusterRole:
 deployment:
   replicaCount: 1
   image:
-    repository: image-registry.openshift-image-registry.svc:5000/kubeinvaders-gitops/kubeinvaders
+    repository: image-registry.openshift-image-registry.svc:5000/kubeinvaders/kubeinvaders
     tag: latest
     pullPolicy: Always
   extraEnv: []
