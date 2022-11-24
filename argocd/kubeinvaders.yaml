@@ -1,20 +1,31 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: v1
+kind: Template
+parameters:
+  - name: DOMAIN
+    required: true
 metadata:
-  name: kubeinvaders
-  namespace: openshift-gitops
-spec:
-  destination:
-    namespace: kubeinvaders
-    server: 'https://kubernetes.default.svc'
-  project: default
-  source:
-    chart: kubeinvaders
-    helm:
-      valueFiles:
-        - https://raw.githubusercontent.com/thomas-mattsson/kubeinvaders-gitops/main/components/kubeinvaders/helm/values.yaml
-    repoURL: 'https://lucky-sideburn.github.io/helm-charts'
-    targetRevision: 1.9.2
-  syncPolicy:
-    automated:
-      selfHeal: true
+ name: kubeinvaders-argoapp-template
+objects:
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: kubeinvaders
+      namespace: openshift-gitops
+    spec:
+      destination:
+        namespace: kubeinvaders
+        server: 'https://kubernetes.default.svc'
+      project: default
+      source:
+        chart: kubeinvaders
+        helm:
+          parameters:
+            - name: route_host
+              value: kubeinvaders.${DOMAIN}
+          valueFiles:
+            - https://raw.githubusercontent.com/thomas-mattsson/kubeinvaders-gitops/main/components/kubeinvaders/helm/values.yaml
+        repoURL: 'https://lucky-sideburn.github.io/helm-charts'
+        targetRevision: 1.9.2
+      syncPolicy:
+        automated:
+          selfHeal: true
