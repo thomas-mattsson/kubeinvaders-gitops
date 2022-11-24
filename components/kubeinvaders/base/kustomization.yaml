@@ -5,3 +5,5 @@ resources:
 - ../tekton/base
 - namespace.yaml
 - openshift-monitoring-role.yaml
+- extra-argo-role.yaml
+- extra-argo-rb.yaml
