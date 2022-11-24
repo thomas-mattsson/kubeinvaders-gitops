@@ -9,6 +9,7 @@ rules:
       - tekton.dev
       - route.openshift.io
       - triggers.tekton.dev
+      - monitoring.coreos.com
     resources:
       - '*'
   - verbs:
@@ -18,3 +19,4 @@ rules:
       - ""
     resources:
       - serviceaccounts
+      - services
