@@ -20,3 +20,10 @@ rules:
     resources:
       - serviceaccounts
       - services
+  - verbs:
+      - create
+      - dlete
+    apiGroups:
+      - apps
+    resources:
+      - deployments
