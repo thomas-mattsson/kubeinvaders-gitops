@@ -11,17 +11,8 @@ spec:
   source:
     chart: kubeinvaders
     helm:
-      parameters:
-        - name: route_host
-          value: >-
-            kubeinvaders-kubeinvaders.mydomain.example.com
-        - name: deployment.image.tag
-          value: latest
-        - name: deployment.image.repository
-          value: >-
-            image-registry.openshift-image-registry.svc:5000/kubeinvaders/kubeinvaders
-        - name: config.target_namespace
-          value: kubeinvaders
+      valueFiles:
+        - https://raw.githubusercontent.com/thomas-mattsson/kubeinvaders-gitops/main/components/kubeinvaders/helm/values.yaml
     repoURL: 'https://lucky-sideburn.github.io/helm-charts'
     targetRevision: 1.9.2
   syncPolicy:
