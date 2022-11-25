@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - servicemesh-member-roll.yaml
+  - route.yaml
   - https://raw.githubusercontent.com/Maistra/istio/maistra-2.3/samples/bookinfo/platform/kube/bookinfo.yaml
   - https://raw.githubusercontent.com/Maistra/istio/maistra-2.3/samples/bookinfo/networking/bookinfo-gateway.yaml
