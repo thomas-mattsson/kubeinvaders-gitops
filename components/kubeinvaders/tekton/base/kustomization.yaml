@@ -6,4 +6,3 @@ resources:
 - eventlistener.yaml
 - triggertemplate.yaml
 - ibm-cloud-pvc.yaml
-- initial-pipelinerun.yaml
