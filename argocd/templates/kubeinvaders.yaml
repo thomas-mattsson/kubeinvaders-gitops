@@ -21,7 +21,7 @@ objects:
         helm:
           parameters:
             - name: route_host
-              value: kubeinvaders.${DOMAIN}
+              value: kubeinvaders-kubeinvaders.${DOMAIN}
           valueFiles:
             - https://raw.githubusercontent.com/thomas-mattsson/kubeinvaders-gitops/main/components/kubeinvaders/helm/values.yaml
         repoURL: 'https://lucky-sideburn.github.io/helm-charts'
