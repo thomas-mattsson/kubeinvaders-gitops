@@ -72,6 +72,25 @@ objects:
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
+      name: operators
+      namespace: openshift-gitops
+      annotations:
+        argocd.argoproj.io/sync-wave: "180"
+    spec:
+      destination:
+        namespace: openshift-operators
+        server: 'https://kubernetes.default.svc'
+      project: default
+      source:
+        path: components/servicemesh/bookinfo/base
+        repoURL: 'https://github.com/thomas-mattsson/kubeinvaders-gitops'
+        targetRevision: HEAD
+      syncPolicy:
+        automated:
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
       name: kubeinvaders-gitops
       namespace: openshift-gitops
       annotations:
