@@ -7,3 +7,4 @@ resources:
 - openshift-monitoring-role.yaml
 - extra-argo-role.yaml
 - extra-argo-rb.yaml
+- route.yaml
