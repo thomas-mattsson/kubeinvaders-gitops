@@ -6,6 +6,7 @@ metadata:
   annotations:
     # Needed for generated Route to be ignored by Argo
     argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
 spec:
   selector:
     istio: ingressgateway # use istio default controller
