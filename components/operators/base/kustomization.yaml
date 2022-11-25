@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - ns-operators-redhat.yaml
 - ns-distributed-tracing.yaml
+- og-operators-redhat.yaml
 - og-distributed-tracing.yaml
 - gitops.yaml
 - pipelines.yaml
