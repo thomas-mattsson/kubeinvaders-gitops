@@ -8,3 +8,4 @@ resources:
 - pipelines.yaml
 - elasticsearch.yaml
 - jaeger.yaml
+- kiali.yaml
