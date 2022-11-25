@@ -7,7 +7,7 @@ fullnameOverride: ""
 
 config:
   # target_namespace where kubeinvaders should be allowed to kill pods
-  target_namespace: "default"
+  target_namespace: "bookinfo"
   alienProximity: 10
   hitsLimit: 1
   updateTime: 0.5
