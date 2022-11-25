@@ -9,3 +9,10 @@ rules:
       - maistra.io
     resources:
       - '*'
+  - verbs:
+      - update
+    apiGroups:
+      - ""
+    resources:
+      - pods
+
