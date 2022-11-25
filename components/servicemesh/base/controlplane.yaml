@@ -19,9 +19,3 @@ spec:
       name: kiali
     grafana:
       enabled: true
-  # Disabling automatic route creation from gateways since ArgoCD can't be configured to ignore them
-  istio:
-    gateways:
-      istio-ingressgateway:
-        ior_enabled: false
-  
