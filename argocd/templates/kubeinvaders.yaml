@@ -72,13 +72,13 @@ objects:
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
-      name: operators
+      name: bookinfo
       namespace: openshift-gitops
       annotations:
         argocd.argoproj.io/sync-wave: "180"
     spec:
       destination:
-        namespace: openshift-operators
+        namespace: bookinfo
         server: 'https://kubernetes.default.svc'
       project: default
       source:
