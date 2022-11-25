@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - controlplane.yaml
+- servicemesh-argo-rb.yaml
+- servicemesh-argo-role.yaml
